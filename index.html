@@ -15,35 +15,33 @@
     }
     .container {
       background-color: white;
-      padding: 24px;
-      border-radius: 0;
-      box-shadow: none;
+      padding: 20px;
       max-width: 100%;
     }
     h1 {
-      font-size: 2em;
+      font-size: 1.8em;
       margin-bottom: 10px;
     }
     h2 {
-      font-size: 1.4em;
-      margin-top: 30px;
-      margin-bottom: 12px;
+      font-size: 1.3em;
+      margin-top: 28px;
+      margin-bottom: 10px;
     }
     h3 {
-      font-size: 1.2em;
+      font-size: 1.1em;
       margin-top: 20px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .intro {
       font-size: 1em;
       color: #515154;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .feature-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin: 20px 0;
+      gap: 14px;
+      margin: 18px 0;
     }
     .feature-card {
       background-color: #f5f5f7;
@@ -52,20 +50,20 @@
     }
     .faq-item {
       background-color: #f5f5f7;
-      padding: 16px;
-      border-radius: 12px;
+      padding: 14px;
+      border-radius: 10px;
       margin-bottom: 12px;
     }
     .faq-question {
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .contact-section {
       background-color: #0071e3;
       color: white;
-      padding: 24px;
-      border-radius: 12px;
-      margin-top: 32px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
       text-align: center;
     }
     .contact-section a {
@@ -77,7 +75,7 @@
       background-color: #fef7e0;
       border-left: 4px solid #f5a623;
       padding: 12px;
-      margin: 16px 0;
+      margin: 14px 0;
       border-radius: 4px;
       font-size: 0.95em;
     }
@@ -101,7 +99,7 @@
     a:hover {
       text-decoration: underline;
     }
-    /* Larger screen tweaks */
+    /* Larger screens */
     @media (min-width: 768px) {
       body {
         padding: 20px;
@@ -109,15 +107,17 @@
       .container {
         max-width: 800px;
         margin: 0 auto;
+        padding: 40px;
         border-radius: 16px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       }
       h1 { font-size: 2.4em; }
       h2 { font-size: 1.7em; }
-      h3 { font-size: 1.3em; }
+      h3 { font-size: 1.2em; }
       .feature-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
       }
     }
   </style>
@@ -153,7 +153,7 @@
     </ul>
 
     <div class="tip">
-      <p><strong>💡 Pro Tip:</strong> Long lists? Use tags and search to find clients instantly.</p>
+      <p><strong>💡 Pro Tip:</strong> Tap an appointment card to reveal instant client contact and navigation options.</p>
     </div>
 
     <h3>Client Management</h3>
@@ -165,9 +165,8 @@
 
     <h3>Payments</h3>
     <ul>
-      <li>Track payments for completed jobs</li>
-      <li>Pull to refresh payments</li>
-      <li>Payments link directly to clients</li>
+      <li>Track payments tied to completed jobs</li>
+      <li>Payments link directly to client history</li>
     </ul>
 
     <h3>Notes</h3>
@@ -179,27 +178,26 @@
     <h3>Import / Export</h3>
     <ul>
       <li>Export all data as a JSON file</li>
-      <li>Import backups from another device</li>
+      <li>Import a JSON backup into ClientBase</li>
       <li>Includes clients, appointments, payments, and notes</li>
     </ul>
 
     <h3>Settings</h3>
     <ul>
       <li>Edit SMS/WhatsApp templates with <code>[DATE]</code> and <code>[CLIENT]</code></li>
-      <li>Adjust appearance and app behavior</li>
-      <li>Manage data backups</li>
+      <li>Adjust app appearance</li>
     </ul>
 
     <h2>FAQ</h2>
 
     <div class="faq-item">
       <div class="faq-question">How do I backup or move my data?</div>
-      <p>Go to <em>Settings</em> → <strong>Export / Import</strong>. Export a JSON file or import one back in. This includes clients, jobs, payments, and notes.</p>
+      <p>Go to the <strong>Support</strong> screen and choose <em>Export All (JSON)</em>. Save the file somewhere safe. To restore, use <em>Import JSON</em> from the same screen.</p>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">Where is my data stored?</div>
-      <p>Locally on your device via Apple’s Core Data. App Group sharing keeps extensions (like payments) in sync. No servers, no cloud.</p>
+      <p>Locally on your device via Apple’s Core Data. App Group storage keeps features like payments in sync. No servers, no cloud.</p>
     </div>
 
     <div class="faq-item">
@@ -209,7 +207,7 @@
 
     <div class="faq-item">
       <div class="faq-question">How do I customize my SMS/WhatsApp message?</div>
-      <p>In Settings, edit the message template. Use <code>[DATE]</code> and <code>[CLIENT]</code> to auto-insert info.</p>
+      <p>In <strong>Settings</strong>, edit the message template. Use <code>[DATE]</code> and <code>[CLIENT]</code> to auto-insert details.</p>
     </div>
 
     <h2>Troubleshooting</h2>
@@ -223,8 +221,8 @@
 
     <h3>Payments not updating?</h3>
     <ul>
-      <li>Pull to refresh in the Payments tab</li>
-      <li>Confirm jobs are marked complete</li>
+      <li>Check that jobs are marked complete</li>
+      <li>Payments are tied to completed appointments</li>
     </ul>
 
     <div class="contact-section">
