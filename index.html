@@ -1,279 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support - ClientBase</title>
-  <meta name="description" content="Support guide for ClientBase — setup, features, troubleshooting, and contact information.">
+  <meta charset="utf-8" />
+  <title>ClientBase — Help & FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ClientBase support: setup guides, feature walkthroughs, and FAQs to help you get the most from the app." />
   <style>
-    :root {
-      --accent: #0071e3;
-      --bg: #f5f5f7;
-      --text: #1d1d1f;
-      --muted: #515154;
-      --card-bg: #ffffff;
-      --card-alt: #f8f8fa;
+    :root{
+      --bg:#0b0c0e;
+      --card:#111317;
+      --ink:#e8eaed;
+      --muted:#9aa0a6;
+      --brand:#34c759;
+      --brand-2:#0ea5e9;
+      --ring:rgba(52,199,89,.35);
+      --border:#1f2228;
+      --radius:16px;
+      --shadow:0 8px 24px rgba(0,0,0,.35);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-    }
-
-    main {
-      background-color: var(--card-bg);
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 900px;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.4em;
-      margin-top: 32px;
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
-
-    h3 {
-      font-size: 1.15em;
-      margin-top: 22px;
-      margin-bottom: 8px;
-    }
-
-    .intro {
-      font-size: 1em;
-      color: var(--muted);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin: 20px 0;
-    }
-
-    .feature-card {
-      background-color: var(--card-alt);
-      padding: 16px;
-      border-radius: 12px;
-    }
-
-    .faq-item {
-      background-color: var(--card-alt);
-      padding: 14px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-    }
-
-    .faq-question {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .contact-section {
-      background-color: var(--accent);
-      color: white;
-      padding: 24px;
-      border-radius: 12px;
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .contact-section a {
-      color: white;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    .tip {
-      background-color: #fef7e0;
-      border-left: 4px solid #f5a623;
-      padding: 12px;
-      margin: 14px 0;
-      border-radius: 4px;
-      font-size: 0.95em;
-    }
-
-    code {
-      background-color: #f4f4f5;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
-      font-size: 0.85em;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 0;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (min-width: 600px) {
-      main {
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      }
-      .feature-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 18px;
-      }
-    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0a0b0d,#0f1217 40%,#0a0c10);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:960px;margin:auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(10,12,16,.75);border-bottom:1px solid var(--border);z-index:10}
+    nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:10px 24px}
+    nav .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    nav .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    nav a.small{color:var(--muted)}
+    .hero{padding:42px 0}
+    .hero h1{font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0}
+    .grid{display:grid;gap:18px}
+    @media(min-width:720px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card .body{padding:18px}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(52,199,89,.08);border:1px solid var(--ring);color:#b7f7c8;font-size:12px;margin-bottom:8px}
+    .kicker{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:0 0 6px}
+    h2{font-size:clamp(20px,2.6vw,28px);margin:10px 0 6px}
+    h3{font-size:18px;margin:6px 0}
+    .list{margin:0;padding-left:18px}
+    .hint{color:var(--muted);font-size:14px}
+    .callout{border:1px dashed var(--border);background:rgba(14,165,233,.08);border-radius:12px;padding:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;border:1px solid var(--border);padding:10px 14px;background:linear-gradient(180deg,#151921,#10141b);color:var(--ink)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#0e1116;border:1px solid var(--border);border-bottom-color:#262a31;padding:2px 6px;border-radius:6px;font-size:13px}
+    .steps{counter-reset:step}
+    .steps li{list-style:none;margin:0 0 10px;padding-left:44px;position:relative}
+    .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:700;color:#08120a}
+    details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    .toc{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+    .toc a{border:1px solid var(--border);padding:8px 10px;border-radius:10px;background:#0b0e13;color:var(--ink)}
+    footer{color:var(--muted);font-size:13px;padding:24px 0}
+    table{border-collapse:collapse;width:100%}
+    th,td{border:1px solid var(--border);padding:10px;vertical-align:top}
+    th{background:#0e1218;text-align:left}
+    pre{background:#0e1116;border:1px solid var(--border);padding:14px;border-radius:10px;overflow:auto}
   </style>
 </head>
 <body>
-  <main>
-    <h1>ClientBase Support</h1>
-    <p class="intro">Welcome to ClientBase support — your guide to mastering your client management app.</p>
-
-    <h2>Getting Started</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>📱 First Launch</h3>
-        <p>Start in the <strong>Today</strong> view — your daily dashboard for jobs, clients, and earnings.</p>
-      </div>
-      <div class="feature-card">
-        <h3>➕ Adding Clients</h3>
-        <p>Save names, addresses, prices, and contact details. Edit or tag them anytime for easier search.</p>
-      </div>
-      <div class="feature-card">
-        <h3>📅 Scheduling</h3>
-        <p>Create jobs for clients. When you mark a recurring job complete, the next one appears automatically.</p>
-      </div>
+<header>
+  <nav>
+    <div class="brand"><span class="dot"></span> ClientBase Support</div>
+    <div class="toc">
+      <a href="#overview">Overview</a>
+      <a href="#setup">Quick Start</a>
+      <a href="#features">Features</a>
+      <a href="#weather">Weather</a>
+      <a href="#faq">FAQ</a>
     </div>
-
-    <h2>Key Features</h2>
-
+  </nav>
+</header>
+<main class="container">
+  <section class="hero">
+    <p class="badge">Made for trades & field services</p>
+    <h1>ClientBase — Run your day, not a spreadsheet</h1>
+    <p>Fast client and job management, clean payments tracking, and weather-aware scheduling. Built for window cleaners, gardeners, and small service teams.</p>
+  </section>
+  <section id="overview" class="card"><div class="body">
+    <h2>Core Capabilities</h2>
+    <ul class="list">
+      <li><strong>Clients:</strong> Names, phone, address, price, notes.</li>
+      <li><strong>Appointments:</strong> Date, duration, completed/paid flags.</li>
+      <li><strong>Recurrence:</strong> Weekly, fortnightly, six-weekly, monthly.</li>
+      <li><strong>Today View:</strong> Daily timeline with quick actions.</li>
+      <li><strong>Payments:</strong> Mark paid/unpaid, stats view.</li>
+      <li><strong>Weather:</strong> Apple WeatherKit integration (enable in Settings).</li>
+      <li><strong>Messaging:</strong> WhatsApp templates with [DATE] tokens.</li>
+      <li><strong>Notes:</strong> Quick scratch pad.</li>
+    </ul>
+  </div></section>
+  <section id="setup" class="card"><div class="body">
+    <h2>Quick Start</h2>
+    <ol class="steps">
+      <li>Add your first client using the <span class="kbd">+</span> button.</li>
+      <li>Create an appointment with date and duration.</li>
+      <li>Enable weather in <em>Settings → Weather</em> and set location.</li>
+      <li>Customise your WhatsApp message in <em>Settings → Messaging</em>.</li>
+      <li>Open <em>Today</em> to run your route.</li>
+    </ol>
+    <div class="callout">Tip: the bottom weather accessory shows hourly rain and temperature.</div>
+  </div></section>
+  <section id="features" class="card"><div class="body">
+    <h2>Main Features</h2>
+    <h3>Clients</h3>
+    <p>Store contact info, addresses, and notes. Quickly call, text, or open maps.</p>
+    <h3>Appointments</h3>
+    <p>Track every job. Mark complete or paid in seconds.</p>
+    <h3>Recurrence</h3>
+    <p>Auto-generate repeat visits weekly or monthly. Skip dates if needed.</p>
     <h3>Today View</h3>
-    <ul>
-      <li>See all jobs for today, week, or month</li>
-      <li>Mark jobs complete and track daily totals</li>
-      <li>Tap a job for quick actions (call, message, maps)</li>
-    </ul>
-
-    <div class="tip">
-      <strong>💡 Tip:</strong> Tap an appointment card to instantly call, text, or navigate to a client.
-    </div>
-
-    <h3>Client Management</h3>
-    <ul>
-      <li>Store full contact info, notes, and pricing</li>
-      <li>Search by name, address, phone, or tag</li>
-      <li>View job history for each client</li>
-    </ul>
-
+    <p>Shows your daily list. Copy total earnings at day’s end.</p>
     <h3>Payments</h3>
-    <ul>
-      <li>Track income from completed jobs</li>
-      <li>View linked payments per client</li>
-    </ul>
-
-    <h3>Notes</h3>
-    <ul>
-      <li>Attach notes to clients or jobs</li>
-      <li>Keep reminders or property details handy</li>
-    </ul>
-
-    <h3>Weather Forecast</h3>
-    <ul>
-      <li>Shows temperature, condition, and forecast icons for your workday</li>
-      <li>Updates automatically once per day</li>
-      <li><strong>Important:</strong> You must enable the <em>Weather</em> option in <strong>Settings → Features</strong> before using this</li>
-    </ul>
-
-    <h3>Import / Export</h3>
-    <ul>
-      <li>Export all data as a JSON backup</li>
-      <li>Reimport to restore your full setup</li>
-      <li>Includes clients, appointments, payments, and notes</li>
-    </ul>
-
-    <h3>Settings</h3>
-    <ul>
-      <li>Edit SMS/WhatsApp templates with <code>[DATE]</code> and <code>[CLIENT]</code></li>
-      <li>Toggle weather display and appearance options</li>
-    </ul>
-
+    <p>Manage unpaid balances, see weekly and monthly totals.</p>
+    <h3>Weather</h3>
+    <p>Plan around rain with hourly forecasts (enable in Settings).</p>
+    <h3>Messaging</h3>
+    <p>One-tap WhatsApp templates — “[DATE]” becomes the real date/time.</p>
+  </div></section>
+  <section id="weather" class="card"><div class="body">
+    <h2>Weather Integration</h2>
+    <p>To enable weather:</p>
+    <ol class="steps">
+      <li>Go to <em>Settings → Weather</em>.</li>
+      <li>Turn on <strong>Enable Weather</strong>.</li>
+      <li>Select your location.</li>
+    </ol>
+    <p>Weather shows in Today view and the bottom bar with hourly rain. It updates automatically once per day to save battery.</p>
+  </div></section>
+  <section id="faq" class="card"><div class="body">
     <h2>FAQ</h2>
-
-    <div class="faq-item">
-      <div class="faq-question">How do I back up or move my data?</div>
-      <p>Go to the <strong>Support</strong> screen → <em>Export All (JSON)</em>. Save safely. Restore anytime with <em>Import JSON</em>.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Where is my data stored?</div>
-      <p>All data stays on your device via Apple’s Core Data. App Groups keep payments in sync. No servers, no external storage.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">How do recurring jobs work?</div>
-      <p>When you mark a recurring job complete, ClientBase automatically adds the next one to your schedule. Future jobs aren’t pre-created.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">How do I customize SMS/WhatsApp messages?</div>
-      <p>Open <strong>Settings</strong> → Templates. Use placeholders <code>[DATE]</code> and <code>[CLIENT]</code> for automatic insertion.</p>
-    </div>
-
-    <h2>Troubleshooting</h2>
-
-    <h3>WhatsApp not opening?</h3>
-    <ul>
-      <li>Ensure WhatsApp is installed</li>
-      <li>Use full numbers with country codes</li>
-      <li>Remove any symbols or spaces in phone numbers</li>
-    </ul>
-
-    <h3>Payments not updating?</h3>
-    <ul>
-      <li>Confirm jobs are marked complete</li>
-      <li>Payments are tied only to completed appointments</li>
-    </ul>
-
-    <h3>Weather not showing?</h3>
-    <ul>
-      <li>Check Settings → Features → Weather is enabled</li>
-      <li>Allow location access when prompted</li>
-      <li>Ensure the device has an internet connection when refreshing data</li>
-    </ul>
-
-    <div class="contact-section">
-      <h2>Still Need Help?</h2>
-      <p>Email for support:</p>
-      <p style="font-size: 1.1em; margin-top: 10px;">
-        📧 <a href="mailto:daragh.dev@icloud.com">daragh.dev@icloud.com</a>
-      </p>
-      <p style="margin-top: 10px;">Replies usually within 24–48 hours</p>
-    </div>
-  </main>
+    <details><summary>How do I confirm jobs?</summary><p>Tap a job → WhatsApp icon. The message inserts the job’s [DATE]. Edit template in Settings → Messaging.</p></details>
+    <details><summary>How do I handle rain?</summary><p>Use the hourly forecast to reorder jobs. Long-press → Reschedule to move an appointment.</p></details>
+    <details><summary>How can I repeat a job every 6 weeks?</summary><p>Set recurrence to “Every 6 Weeks” when creating the appointment.</p></details>
+    <details><summary>Can I change a one-off price?</summary><p>Yes. Use “Price override” inside an appointment.</p></details>
+    <details><summary>Does weather work offline?</summary><p>Yes, the last forecast is cached. It refreshes when online again.</p></details>
+    <details><summary>Why doesn’t [DATE] insert correctly?</summary><p>Ensure you typed it exactly as [DATE] in your message template.</p></details>
+    <details><summary>Where are my notes?</summary><p>Use the Notes tab’s Scratch Pad for quick reminders.</p></details>
+    <details><summary>How do I contact support?</summary><p>Email <a href="mailto:support@clientbase.app">support@clientbase.app</a> with your issue and iOS version.</p></details>
+  </div></section>
+  <footer>
+    <p>© ClientBase. Apple Weather data used with permission. Apple, iPhone, and Siri are trademarks of Apple Inc.</p>
+  </footer>
+</main>
 </body>
 </html>
